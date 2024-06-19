@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React JS</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <!-- 
+        # SPA - Single page Application: Ứng dụng 1 trang
+        - React Js là 1 trong những thư viện tạo ra SPA
+        - Các "ông lớn" Sử dụng SPA: GG, FB, Twitter
+        - Các SPA khác: Shopee, Chotot, ...
+
+        #MPA - Multi-page Application: Ứng dụng nhiều trang 
+
+        ** Khác biệt
+        *** SPA {
+            - Tiếp cận hiện đại
+            - Không yêu cầu tải lại trang 
+            - Nhanh hơn khi sử dụng -> 1 lần tải gần hết
+            - Bóc tách
+            - Không thân thiện với SEO
+            - phụ thuộc hoàn toàn vào JS
+        }
+
+        *** MPA {
+            - cách tiếp cận cổ điển hơn 
+            - Tải lại trang trong quá trình sử dụng
+            - chậm hơn khi sử dụng ->  chuyển trang tải lại từ đầu
+            - Frontend & Backend phụ thuộc nhau nhiều hơn
+            - Thân thiện SEO
+            - Không có JS cũng được
+        }
+     -->
+
+    <!-- 
+      *** React
+
+      - Thành phần nhỏ nhất là React.elements
+    -->
+
+    <div id="root"></div>
+
+    <script>
+      // DOM
+      /**
+        const h1DOM = document.createElement("h1");
+        h1.innerText = "Hello Guy";
+        h1.className = "Heading";
+        h1.title = "Hello";
+        document.body.appendChild(h1);
+      */
+
+      const ulDOM = document.createElement("ul");
+      const liDOM1 = document.createElement("li");
+      liDOM1.innerText = "Javascript";
+      const liDOM2 = document.createElement("li");
+      liDOM2.innerText = "ReactJS";
+
+      ulDOM.appendChild(liDOM1);
+      ulDOM.appendChild(liDOM2);
+
+      document.body.appendChild(ulDOM);
+      // React - React-DOM
+
+      // React.createElement(Type, Props, Children, n)
+
+      /**
+      const h1React = React.createElement(
+        "h1",
+        {
+          title: "Hello",
+          className: "Heading",
+        },
+        "Hello guy!"
+      );
+      */
+
+      const divReact = React.createElement(
+        "div",
+        {
+          className: "post-item",
+        },
+        React.createElement(
+          "h2",
+          {
+            title: "Học tại React F8",
+          },
+          "Học ReactJS"
+        ),
+        React.createElement("p", null, "Học ReactJS từ cơ bản đến nâng cao ")
+      );
+
+      //get root elements
+      const root = document.getElementById("root");
+
+      ReactDOM.render(divReact, root);
+    </script>
+  </body>
+</html>

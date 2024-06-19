@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script>
+      const root = document.getElementById("root");
+      const postItem = React.createElement(
+        "ul",
+        {
+          id: "post-item",
+          className: "post",
+        },
+        React.createElement("li", {}, "Javascript"),
+        React.createElement("li", {}, "ReactJS")
+      );
+
+      ReactDOM.render(postItem, root);
+    </script>
+  </body>
+</html>
